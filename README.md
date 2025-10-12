@@ -1,2 +1,3 @@
 # zhenxun_plugin_MaimAdapter
-用于让maim获取真寻的好感度
+
+用于让maim获取真寻的好感度,需要配合MahiroAdapter使用

@@ -34,9 +34,12 @@ async def get_info(user_id: int):
         level, _, _ = get_level_and_next_impression(impression)
         level = level if level != 0 else 1
         attitude = level2attitude[str(level)]
-        logger.error(
+        logger.info(
             f"Success get info, user_id: {user_id}, impression: {impression}, attitude: {attitude}, level: {level}"
         )
         return {"impression": impression, "attitude": attitude, "level": level}
     except Exception:
+        logger.error(
+            f"Error get info, user_id: {user_id}, error: {traceback.format_exc()}"
+        )
         return {"error": traceback.format_exc(), "code": 500}
